@@ -32,7 +32,9 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-        <img src="{% static 'AtoV/img/atov-logo.png' %}" alt="logo" style="width:50px;height:50.85px;">
+        <a href="{% url 'map' %}">
+            <img src="{% static 'AtoV/img/atov-logo.png' %}" alt="logo" style="width:50px;height:50.85px;">
+        </a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="{% url 'map' %}">A-to-V</a></li>
@@ -46,17 +48,17 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <h1>List View</h1>
+            <h1>List View</h1> 
+            <h3><a href="https:\/\/www.loc.gov\/item\/afccal000099\/" class="source"> Center for Applied Linguistics Collection | Library of Congress</a></h3>
                 <div class="well" class="list-item">
-                    <h3 class="title">Speech by Franklin D. Roosevelt, New York</h3>
-                    <ul>
-                        <li>
-                            <a href="https:\/\/www.loc.gov\/item\/afccal000099\/" class="source"> Center for Applied Linguistics Collection | Library of Congress</a>
-                        </li>
-                        <li>    
-                            <a href="https:\/\/opentranscript.herokuapp.com\/transcripts\/speech-by-franklin-d-roosevelt-new-york" class="source">Transcript</a>
-                        </li>
-
+                    <div class ="item-head">
+                        <h3 class="title">Speech by Franklin D. Roosevelt, New York</h3>
+                        <span class="location">New York</span>
+                        <a class="url" href="https:\/\/opentranscript.herokuapp.com\/transcripts\/speech-by-franklin-d-roosevelt-new-york" class="source">Transcript</a>
+                    </div>
+                    <div class ="item-description">
+                        <p class="description"> Address to Congress requesting a declaration of war, Dec. 8, 1941; World War 1 Aerial operations</p>
+                    </div>
 
                 </div>
         
