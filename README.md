@@ -3,3 +3,4 @@
 ## Things to consider:
 
 - accomodating someone wanting a list of data
+- search results on map

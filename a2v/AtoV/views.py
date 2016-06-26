@@ -8,3 +8,7 @@ def index(req):
 def app(req):
 
 	return render(req, 'AtoV/app.html')
+
+def map(req):
+
+	return render(req, 'AtoV/map.html')

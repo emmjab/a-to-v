@@ -1,0 +1,37 @@
+{% extends 'AtoV/base.html' %}
+{% load leaflet_tags %}
+
+{% block head_cont %}
+<!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script> -->
+    {% leaflet_js %}
+    {% leaflet_css %}
+<style>
+#mapid { height: 600px; }
+</style>
+{% endblock head_cont %}
+
+{% block extra_content %}
+
+{# leaflet_map "atov" #}
+
+<div id="mapid"></div>
+
+<script>
+  $( document ).ready(function() {
+    console.log( "ready!" );
+
+  // initialize the map
+  var map = L.map('mapid').setView([42.35, -71.08], 13);
+
+  // load a tile layer
+  L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+    {
+      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+      maxZoom: 17,
+      minZoom: 9
+    }).addTo(map);
+
+});
+</script>
+{% endblock extra_content %}
