@@ -11,7 +11,9 @@
     <title>A to V: NYPL Audio Weekend</title>
 <link rel="stylesheet" href="{% static 'AtoV/css/styles.css' %}">
 <!-- Latest compiled and minified CSS -->
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -27,33 +29,59 @@
 {% endblock head_cont %}
 </head>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <img src="{% static 'AtoV/img/atov-logo.png' %}" alt="logo" style="width:50px;height:50.85px;">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'map' %}">A-to-V</a></li>
+      <li><a href="{% url 'index' %}">About</a></li>
+      <li><a href="{% url 'app' %}">Upload your data</a></li>
+    </ul>
+  </div>
+</nav>
 
     <div id="wrapper">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        A to V
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'index' %}">About</a>
-                </li>
-                <li>
-                    <a href="{% url 'app' %}">Search</a>
-                </li>
-                <li>
-                    <a href="{% url 'map' %}">Map</a>
-                </li>
-                </li>
-            </ul>
+            <h1>List View</h1>
+                <div class="well" class="list-item">
+                    <h3 class="title">Speech by Franklin D. Roosevelt, New York</h3>
+                    <ul>
+                        <li>
+                            <a href="https:\/\/www.loc.gov\/item\/afccal000099\/" class="source"> Center for Applied Linguistics Collection | Library of Congress</a>
+                        </li>
+                        <li>    
+                            <a href="https:\/\/opentranscript.herokuapp.com\/transcripts\/speech-by-franklin-d-roosevelt-new-york" class="source">Transcript</a>
+                        </li>
+
+
+                </div>
+        
+
+
+        </div>
+
+<!-- 
+            "id": "speech-by-franklin-d-roosevelt-new-york",
+            "url": "https:\/\/opentranscript.herokuapp.com\/transcripts\/speech-by-franklin-d-roosevelt-new-york",
+            "origin_url": "https:\/\/www.loc.gov\/item\/afccal000099\/",
+            "last_updated": "2016-06-16T19:23:11.376Z",
+            "title": "Speech by Franklin D. Roosevelt, New York",
+            "description": "Address to Congress requesting a declaration of war, Dec. 8, 1941; World War 1 Aerial operations",
+            "audio_url": "https:\/\/stream-media.loc.gov\/afc\/cal\/afc1986022_sr14a01.mp3",
+            "image_url": "https:\/\/s3.amazonaws.com\/togetherwelisten.nypl.org\/img\/hack\/logos\/loc-cal-logo.png",
+            "duration": 467, -->
+
+
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             <div class="container-fluid">
             	{% block extra_content %}
                 <div class="row">
@@ -70,7 +98,12 @@
     <!-- /#wrapper -->
 
 
-
+ <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 
 </body>
 </html>
